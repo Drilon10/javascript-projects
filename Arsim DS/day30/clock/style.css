@@ -1,0 +1,26 @@
+body {
+    width: 100%;
+    background-color: #06206a;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+select {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#timeImage {
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Digital School Clock</h1>
+    <h2 id="clock">Clock goes here</h2>
+    <img src="img/ds_clock.png" id="timeImage" alt="">
+
+    <h4>SET WAKE UP TIME</h4>
+    <select id="wakeUpTimeSelector">
+        <option value="1">01-02</option>
+        <option value="2">02-03</option>
+        <option value="3">03-04</option>
+        <option value="4">04-05</option>
+        <option value="5">05-06</option>
+        <option value="6">06-07</option>
+        <option value="7" selected>07-08</option>
+        <option value="8">08-09</option>
+        <option value="9">09-10</option>
+        <option value="10">10-11</option>
+        <option value="11">11-12</option>
+        <option value="12">12-13</option>
+        <option value="13">13-14</option>
+        <option value="14">14-15</option>
+        <option value="15">15-16</option>
+        <option value="16">16-17</option>
+        <option value="17">17-18</option>
+        <option value="18">18-19</option>
+        <option value="19">19-20</option>
+        <option value="20">20-21</option>
+        <option value="21">21-22</option>
+        <option value="22">22-23</option>
+        <option value="23">23-00</option>
+        <option value="24">00-01</option>
+    </select>
+
+    <h4>SET SCHOOL TIME</h4>
+    <select id="schoolTimeSelector">
+        <option value="1">01-02</option>
+        <option value="2">02-03</option>
+        <option value="3">03-04</option>
+        <option value="4">04-05</option>
+        <option value="5">05-06</option>
+        <option value="6">06-07</option>
+        <option value="7">07-08</option>
+        <option value="8">08-09</option>
+        <option value="9">09-10</option>
+        <option value="10">10-11</option>
+        <option value="11">11-12</option>
+        <option value="12" selected>12-13</option>
+        <option value="13">13-14</option>
+        <option value="14">14-15</option>
+        <option value="15">15-16</option>
+        <option value="16">16-17</option>
+        <option value="17">17-18</option>
+        <option value="18">18-19</option>
+        <option value="19">19-20</option>
+        <option value="20">20-21</option>
+        <option value="21">21-22</option>
+        <option value="22">22-23</option>
+        <option value="23">23-00</option>
+        <option value="24">00-01</option>
+    </select>
+
+    <h4>SET SLEEP TIME</h4>
+    <select id="sleepTimeSelector">
+        <option value="1">01-02</option>
+        <option value="2">02-03</option>
+        <option value="3">03-04</option>
+        <option value="4">04-05</option>
+        <option value="5">05-06</option>
+        <option value="6">06-07</option>
+        <option value="7">07-08</option>
+        <option value="8">08-09</option>
+        <option value="9">09-10</option>
+        <option value="10">10-11</option>
+        <option value="11">11-12</option>
+        <option value="12">12-13</option>
+        <option value="13">13-14</option>
+        <option value="14">14-15</option>
+        <option value="15">15-16</option>
+        <option value="16">16-17</option>
+        <option value="17">17-18</option>
+        <option value="18">18-19</option>
+        <option value="19">19-20</option>
+        <option value="20">20-21</option>
+        <option value="21">21-22</option>
+        <option value="22">22-23</option>
+        <option value="23" selected>23-00</option>
+        <option value="24">00-01</option>
+    </select>
+
+    <br>
+
+    <button id="saveBtn">SET ALARM</button>
+
+
+
+    <script src="clock.js"></script>
+</body>
+</html>

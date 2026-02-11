@@ -1,0 +1,7 @@
+body {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+.weather-card {
+    width: 400px;
+}

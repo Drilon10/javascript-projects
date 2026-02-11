@@ -1,0 +1,4 @@
+#name_error, #age_error {
+    color: red;
+    visibility: hidden;
+}

@@ -1,0 +1,18 @@
+body {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.todo-card {
+  width: 360px;
+  border-radius: 18px;
+}
+
+.list-group-item {
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+button.btn-danger {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .calculator {
+    width: 320px;
+    border-radius: 20px;
+  }
+  
+  button {
+    height: 55px;
+    font-size: 1.1rem;
+  }
+  
+  #display {
+    border-radius: 12px;
+    background-color: #f8f9fa;
+  }
+  

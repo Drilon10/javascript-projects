@@ -1,0 +1,18 @@
+body {
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.clock-card {
+  width: 360px;
+  border-radius: 18px;
+}
+
+.display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: #000;
+  color: #00ffcc;
+  padding: 15px;
+  border-radius: 12px;
+}
