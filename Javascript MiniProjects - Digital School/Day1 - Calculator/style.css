@@ -6,6 +6,10 @@ body {
   .calculator {
     width: 320px;
     border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
   
   button {
