@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Speed Test</title>
+
+  <!-- Google Fonts — a clean monospace font for the typing area -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Our custom styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== MAIN CONTAINER ========== -->
+  <div class="app-container">
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+      <h1 class="logo">⌨️ TypeRacer</h1>
+      <p class="subtitle">Test your typing speed and accuracy</p>
+    </header>
+
+    <!-- ========== STATS BAR ========== -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-number" id="wpm">0</span>
+        <span class="stat-label">WPM</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="accuracy">100</span>
+        <span class="stat-label">Accuracy %</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="timer">60</span>
+        <span class="stat-label">Seconds</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="errors">0</span>
+        <span class="stat-label">Errors</span>
+      </div>
+    </div>
+
+    <!-- ========== PROGRESS BAR ========== -->
+    <div class="progress-track">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
+
+    <!-- ========== TEXT DISPLAY ========== -->
+    <!-- This is the paragraph the user must type. Each character gets its own <span> -->
+    <div class="text-display" id="textDisplay"></div>
+
+    <!-- ========== INPUT AREA ========== -->
+    <textarea
+      id="inputArea"
+      class="input-area"
+      placeholder="Click here and start typing..."
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+    ></textarea>
+
+    <!-- ========== CONTROLS ========== -->
+    <div class="controls">
+      <button id="restartBtn" class="btn btn-restart">↻ Restart</button>
+      <select id="difficultySelect" class="btn btn-select">
+        <option value="easy">Easy (common words)</option>
+        <option value="medium" selected>Medium (sentences)</option>
+        <option value="hard">Hard (code snippets)</option>
+      </select>
+      <select id="timeSelect" class="btn btn-select">
+        <option value="30">30 seconds</option>
+        <option value="60" selected>60 seconds</option>
+        <option value="120">120 seconds</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ========== RESULTS OVERLAY ========== -->
+  <div id="resultsOverlay" class="results-overlay hidden">
+    <div class="results-card">
+      <h2 class="results-title">⏱️ Time's Up!</h2>
+
+      <div class="results-grid">
+        <div class="result-item">
+          <span class="result-value" id="finalWpm">0</span>
+          <span class="result-desc">Words per Minute</span>
+        </div>
+        <div class="result-item">
+          <span class="result-value" id="finalAccuracy">0%</span>
+          <span class="result-desc">Accuracy</span>
+        </div>
+        <div class="result-item">
+          <span class="result-value" id="finalChars">0</span>
+          <span class="result-desc">Characters Typed</span>
+        </div>
+        <div class="result-item">
+          <span class="result-value" id="finalErrors">0</span>
+          <span class="result-desc">Total Errors</span>
+        </div>
+      </div>
+
+      <!-- Performance message based on WPM -->
+      <p class="results-message" id="resultsMessage"></p>
+
+      <button id="tryAgainBtn" class="btn btn-restart btn-large">Try Again</button>
+    </div>
+  </div>
+
+  <!-- Game script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sketch Pad</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Our custom styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+      <h1 class="logo">🎨 Sketch Pad</h1>
+      <p class="subtitle">Draw, create, and download your art</p>
+    </header>
+
+    <!-- ========== TOOLBAR ========== -->
+    <div class="toolbar">
+
+      <!-- Tool buttons -->
+      <div class="tool-group">
+        <button id="penTool" class="tool-btn active" title="Pen">
+          <span class="tool-icon">✏️</span>
+          <span class="tool-label">Pen</span>
+        </button>
+        <button id="eraserTool" class="tool-btn" title="Eraser">
+          <span class="tool-icon">🧹</span>
+          <span class="tool-label">Eraser</span>
+        </button>
+        <button id="fillTool" class="tool-btn" title="Fill Background">
+          <span class="tool-icon">🪣</span>
+          <span class="tool-label">Fill</span>
+        </button>
+      </div>
+
+      <!-- Brush Size Slider -->
+      <div class="tool-group slider-group">
+        <label class="slider-label">
+          Size: <strong id="sizeValue">4</strong>px
+        </label>
+        <input type="range" id="brushSize" class="slider" min="1" max="50" value="4" />
+      </div>
+
+      <!-- Opacity Slider -->
+      <div class="tool-group slider-group">
+        <label class="slider-label">
+          Opacity: <strong id="opacityValue">100</strong>%
+        </label>
+        <input type="range" id="brushOpacity" class="slider" min="5" max="100" value="100" />
+      </div>
+
+      <!-- Color Picker + Preset Colors -->
+      <div class="tool-group color-group">
+        <input type="color" id="colorPicker" class="color-picker" value="#6366f1" title="Pick a color" />
+        <div class="color-presets" id="colorPresets">
+          <!-- Filled by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="tool-group">
+        <button id="undoBtn" class="action-btn" title="Undo (Ctrl+Z)">↩ Undo</button>
+        <button id="clearBtn" class="action-btn action-danger" title="Clear Canvas">🗑 Clear</button>
+        <button id="downloadBtn" class="action-btn action-success" title="Download as PNG">💾 Save</button>
+      </div>
+
+    </div>
+
+    <!-- ========== CANVAS WRAPPER ========== -->
+    <div class="canvas-wrapper" id="canvasWrapper">
+      <canvas id="canvas"></canvas>
+
+      <!-- Cursor preview circle (follows the mouse) -->
+      <div id="cursorPreview" class="cursor-preview"></div>
+    </div>
+
+    <!-- ========== FOOTER INFO ========== -->
+    <div class="footer-info">
+      <span id="cursorPos">X: 0 &nbsp; Y: 0</span>
+      <span id="historyCount">History: 0</span>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

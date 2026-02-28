@@ -1,0 +1,390 @@
+/* ============================================
+   TYPING SPEED TEST — STYLES
+   Dark professional theme with smooth animations
+   ============================================ */
+
+/* ---------- CSS Custom Properties (Variables) ---------- */
+/* Using CSS variables makes it easy to change the color
+   scheme from one place. Students can experiment here! */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a28;
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #e4e4e7;
+  --text-dim: #71717a;
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-sans: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Subtle animated gradient background */
+  background: linear-gradient(160deg, #0a0a0f 0%, #111128 50%, #0a0a0f 100%);
+}
+
+/* ---------- App Container ---------- */
+.app-container {
+  width: 100%;
+  max-width: 780px;
+  padding: 30px 24px;
+}
+
+/* ---------- Header ---------- */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #6366f1, #a78bfa, #6366f1);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animated gradient text */
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+.subtitle {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Stats Bar ---------- */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.08);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent);
+
+  /* Number changes animate smoothly */
+  transition: color 0.3s ease;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* ---------- Progress Bar ---------- */
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* ---------- Text Display ---------- */
+/* The paragraph the user needs to type — each character is a <span> */
+.text-display {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  line-height: 2;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  min-height: 120px;
+  color: var(--text-dim);
+  user-select: none;
+
+  /* Subtle inner shadow for depth */
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Character states — these classes are toggled by JavaScript */
+.char {
+  transition: color 0.15s ease, background-color 0.15s ease;
+  border-radius: 2px;
+  padding: 1px 0;
+}
+
+/* The character the user needs to type NEXT */
+.char.current {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
+  border-bottom: 2px solid var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { border-bottom-color: transparent; }
+}
+
+/* Correctly typed character */
+.char.correct {
+  color: var(--success);
+}
+
+/* Incorrectly typed character */
+.char.incorrect {
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.15);
+  text-decoration: underline;
+  text-decoration-color: var(--error);
+}
+
+/* ---------- Input Area ---------- */
+.input-area {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  resize: none;
+  height: 60px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-area:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.input-area::placeholder {
+  color: var(--text-dim);
+}
+
+/* Disable the input when the game is over */
+.input-area:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-restart {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-restart:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.btn-restart:active {
+  transform: translateY(0);
+}
+
+.btn-select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  appearance: auto;
+}
+
+.btn-select:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* ---------- Results Overlay ---------- */
+.results-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.5s ease;
+}
+
+.results-overlay.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.results-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px 44px;
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+
+  /* Entrance animation */
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.results-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.result-item {
+  background: var(--bg-secondary);
+  border-radius: 14px;
+  padding: 20px 14px;
+}
+
+.result-value {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+.result-desc {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.results-message {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.btn-large {
+  padding: 16px 40px;
+  font-size: 1rem;
+  border-radius: 14px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .text-display {
+    font-size: 1rem;
+    padding: 20px 16px;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+}
