@@ -15,7 +15,7 @@ getWeather(city);
 
 
 cityInput.addEventListener('keypress', (e) => {
-if (e.key === 'Enter') searchBtn.click();
+    if (e.key === 'Enter') searchBtn.click();
 });
 
 

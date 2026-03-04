@@ -39,18 +39,25 @@ startBtn.addEventListener('click', () => {
 
   if (timeLeft <= 0) return;
 
+  // Disable the start button so the user cannot click it again while running
+  startBtn.disabled = true;
+
   timer = setInterval(() => {
     timeLeft--;
     timerDisplay.innerText = formatTime(timeLeft);
 
     if (timeLeft === 0) {
       clearInterval(timer);
+      // Re-enable start button when the timer finishes naturally
+      startBtn.disabled = false;
     }
   }, 1000);
 });
 
 stopBtn.addEventListener('click', () => {
   clearInterval(timer);
+  // Re-enable start button so the user can resume
+  startBtn.disabled = false;
 });
 
 resetBtn.addEventListener('click', () => {
@@ -58,4 +65,6 @@ resetBtn.addEventListener('click', () => {
   timeLeft = 0;
   timerDisplay.innerText = '00';
   timeInput.value = '';
+  // Re-enable start button after reset
+  startBtn.disabled = false;
 });
