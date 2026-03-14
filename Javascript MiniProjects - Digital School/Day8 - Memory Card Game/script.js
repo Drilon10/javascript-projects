@@ -1,18 +1,3 @@
-// ============================================
-//  MEMORY CARD GAME — JavaScript
-//  Concepts covered:
-//    - Arrays & Array methods (map, sort, forEach)
-//    - DOM manipulation (createElement, classList, innerHTML)
-//    - Event listeners (click events)
-//    - setTimeout for delayed actions
-//    - setInterval for a live timer
-//    - Game state management with variables
-//    - The Fisher-Yates shuffle algorithm
-//    - CSS 3D flip via toggling classes
-// ============================================
-
-// ========== 1. GRAB DOM ELEMENTS ==========
-// We get references to the HTML elements we need to update
 
 const gameBoard = document.getElementById('gameBoard');
 const moveCountEl = document.getElementById('moveCount');
@@ -23,10 +8,6 @@ const winModal = document.getElementById('winModal');
 const finalMovesEl = document.getElementById('finalMoves');
 const finalTimeEl = document.getElementById('finalTime');
 const playAgainBtn = document.getElementById('playAgainBtn');
-
-// ========== 2. GAME DATA ==========
-// We use emoji as our card symbols — 8 unique emojis = 8 pairs = 16 cards total
-// Feel free to change these to anything you like!
 
 const emojis = ['🐶', '🐱', '🦊', '🐸', '🐵', '🦁', '🐼', '🐨'];
 

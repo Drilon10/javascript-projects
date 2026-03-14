@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="header-info">
+                <div class="bot-avatar">AI</div>
+                <div>
+                    <h1>AI Chatbot</h1>
+                    <span class="status" id="status">Enter API key to start</span>
+                </div>
+            </div>
+            <button class="settings-btn" id="settingsBtn" title="Settings">&#9881;</button>
+        </header>
+
+        <div class="settings-panel" id="settingsPanel">
+            <label for="apiKeyInput">OpenAI API Key:</label>
+            <div class="key-input-wrapper">
+                <input type="password" id="apiKeyInput" placeholder="sk-...">
+                <button id="saveKeyBtn">Save</button>
+            </div>
+            <p class="key-note">Your key is stored in session memory only and never sent anywhere except OpenAI.</p>
+        </div>
+
+        <main class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <h2>Welcome to AI Chatbot!</h2>
+                <p>Click the &#9881; icon above to enter your OpenAI API key, then start chatting.</p>
+            </div>
+        </main>
+
+        <form class="chat-input-form" id="chatForm">
+            <textarea id="messageInput" placeholder="Type your message..." rows="1" disabled></textarea>
+            <button type="submit" id="sendBtn" disabled>&#10148;</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
